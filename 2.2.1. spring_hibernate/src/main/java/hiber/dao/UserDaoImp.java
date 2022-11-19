@@ -17,13 +17,13 @@ public class UserDaoImp implements UserDao {
    private SessionFactory sessionFactory;
 
    @Override
-   @Transactional
+
    public void add(User user) {
       sessionFactory.getCurrentSession().save(user);
    }
 
    @Override
-   @Transactional
+
    @SuppressWarnings("unchecked")
    public List<User> listUsers() {
       TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery("from User");
@@ -31,7 +31,7 @@ public class UserDaoImp implements UserDao {
    }
 
    @Override
-   @Transactional
+
    public List<User> getUserByCar(String model, int series) {
 
       Session session = sessionFactory.getCurrentSession();
